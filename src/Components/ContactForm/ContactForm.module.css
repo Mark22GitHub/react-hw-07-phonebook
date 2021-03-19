@@ -1,0 +1,37 @@
+.contactForm {
+  border: 2px solid #000;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.addContact {
+  cursor: pointer;
+  width: 180px;
+  padding: 5px;
+  font-size: inherit;
+  font-weight: 500;
+  border-radius: 10px;
+  background-color: white;
+  margin: auto;
+}
+
+.addContact:hover {
+ background-color: #3f51b5;
+  color: white;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  transform: scale(1.2);
+}
+
+
+.input {
+  display: flex;
+  font-size: inherit;
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+
+label {
+  margin: auto;
+}
