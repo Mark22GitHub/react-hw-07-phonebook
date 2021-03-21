@@ -45,4 +45,46 @@ const deleteFromContacts = (contactId) => (dispatch) => {
     .catch((error) => dispatch(deleteFromContactsError(error)));
 };
 
+// ===========================================================
+// async Redux / async/await
+
+// const fetchContacts = () => async (dispatch) => {
+//   dispatch(fetchContactsRequest());
+
+//   try {
+//     const { data } = await axios.get("/contacts");
+//     dispatch(fetchContactsSuccess(data));
+//   } catch (error) {
+//     dispatch(fetchContactsError(error));
+//   }
+// };
+
+// const addContact = ({ name, number }) => async (dispatch) => {
+//   const contact = {
+//     name,
+//     number,
+//   };
+
+//   dispatch(addContactsRequest());
+
+//   try {
+//     const { data } = await axios.post("/contacts", contact);
+//     dispatch(addContactsSuccess(data));
+//   } catch (error) {
+//     dispatch(addContactsError(error));
+//   }
+// };
+
+// const deleteFromContacts = (contactId) => async (dispatch) => {
+//   dispatch(deleteFromContactsRequest());
+
+//   try {
+//     await axios.delete(`contacts/${contactId}`);
+//     dispatch(deleteFromContactsSuccess(contactId));
+//   } catch (error) {
+//     dispatch(deleteFromContactsError(error));
+//   }
+// };
+// ===========================================================
+
 export default { fetchContacts, addContact, deleteFromContacts };
