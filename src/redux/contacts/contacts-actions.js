@@ -2,9 +2,29 @@
 // import types from "./contacts-types";
 import { createAction } from "@reduxjs/toolkit";
 
+export const fetchContactsRequest = createAction(
+  "contacts/fetchContactsRequest"
+);
+export const fetchContactsSuccess = createAction(
+  "contacts/fetchContactsSuccess"
+);
+export const fetchContactsError = createAction("contacts/fetchContactsError");
+
 export const addContactsRequest = createAction("contacts/addContactsRequest");
 export const addContactsSuccess = createAction("contacts/addContactsSuccess");
 export const addContactsError = createAction("contacts/addContactsError");
+
+export const deleteFromContactsRequest = createAction(
+  "contacts/deleteFromContactsRequest"
+);
+export const deleteFromContactsSuccess = createAction(
+  "contacts/deleteFromContactsSuccess"
+);
+export const deleteFromContactsError = createAction(
+  "contacts/deleteFromContactsError"
+);
+
+export const changeFilter = createAction("contacts/changeFilter");
 
 /*Redux Tookit*/
 
@@ -16,9 +36,7 @@ export const addContactsError = createAction("contacts/addContactsError");
 //   },
 // }));
 
-const deleteFromContacts = createAction("contacts/delete");
-
-const changeFilter = createAction("contacts/changeFilter");
+// export const deleteFromContacts = createAction("contacts/delete");
 
 /*Redux*/
 

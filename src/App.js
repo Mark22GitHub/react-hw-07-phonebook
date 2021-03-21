@@ -3,7 +3,14 @@ import ContactForm from "./Components/ContactForm/";
 import ContactList from "./Components/ContactList/";
 import Filter from "./Components/Filter/";
 
+import { connect } from "react-redux";
+import contactsOperations from "./redux/contacts/contacts-operations";
+
 class App extends Component {
+  componentDidMount() {
+    this.props.fetchContacts();
+  }
+
   render() {
     return (
       <div style={{ width: "300px", margin: "0 auto" }}>
@@ -12,9 +19,18 @@ class App extends Component {
         <h2>Contacts</h2>
         <Filter />
         <ContactList />
+        {this.props.isLoadingContacts && <h1>Loading...</h1>}
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+  isLoadingContacts: state.contacts.loading,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  fetchContacts: () => dispatch(contactsOperations.fetchContacts()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
