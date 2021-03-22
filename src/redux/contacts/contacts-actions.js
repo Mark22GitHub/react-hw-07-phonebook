@@ -26,7 +26,7 @@ export const changeFilter = createAction("contacts/changeFilter");
 
 /*Redux Tookit*/
 
-// const addContact = createAction("contacts/add", ({ name, number }) => ({
+// export const addContact = createAction("contacts/add", ({ name, number }) => ({
 //   payload: {
 //     id: uuidv4(),
 //     name,
@@ -36,31 +36,4 @@ export const changeFilter = createAction("contacts/changeFilter");
 
 // export const deleteFromContacts = createAction("contacts/delete");
 
-/*Redux*/
-
-// const addContact = ({ name, number }) => ({
-//   type: types.ADD,
-//   payload: {
-//     id: uuidv4(),
-//     name: name,
-//     number: number,
-//   },
-// });
-
-// const deleteFromContacts = (contactListId) => ({
-//   type: types.DELETE,
-//   payload: contactListId,
-// });
-
-// const changeFilter = (value) => ({
-//   type: types.CHANGE_FILTER,
-//   payload: value,
-// });
-
-// export default {
-//   addContactsRequest,
-//   addContactsSuccess,
-//   addContactsError,
-//   deleteFromContacts,
-//   changeFilter,
-// };
+// export const changeFilter = createAction("contacts/changeFilter");

@@ -1,5 +1,3 @@
-// import { createStore, combineReducers } from "redux";
-// import { composeWithDevTools } from "redux-devtools-extension";
 import { contactsReducer } from "./contacts";
 import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 import {
@@ -14,14 +12,6 @@ import {
 } from "redux-persist";
 // import storage from "redux-persist/lib/storage";
 import logger from "redux-logger";
-
-/*Redux*/
-
-// const rootReducer = combineReducers({
-//   contacts: contactsReducer,
-// });
-
-// const store = createStore(rootReducer, composeWithDevTools());
 
 /*Redux Tookit*/
 

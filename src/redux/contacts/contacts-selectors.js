@@ -4,6 +4,7 @@ const getLoadingContacts = (state) => state.contacts.loading;
 const getAllContacts = (state) => state.contacts.items;
 const getFilter = (state) => state.contacts.filter;
 
+// memoized selector
 const getVisibleContacts = createSelector(
   [getAllContacts, getFilter],
   (contacts, filter) => {
@@ -21,6 +22,8 @@ export default {
   getFilter,
   getVisibleContacts,
 };
+
+// combined selector
 
 // export const getVisibleContacts = (state) => {
 //   const contacts = getAllContacts(state);
