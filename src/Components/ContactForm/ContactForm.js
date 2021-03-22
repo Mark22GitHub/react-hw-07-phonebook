@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { v4 as uuidv4 } from "uuid";
 import styles from "./ContactForm.module.css";
 import { connect } from "react-redux";
-import contactsOperations from "../../redux/contacts/contacts-operations";
-import { getAllContacts } from "../../redux/contacts/contacts-selectors";
+
+import { contactsOperations, contactsSelectors } from "../../redux/contacts";
 
 export const INITIAL_STATE = {
   name: "",
@@ -17,7 +17,6 @@ class ContactForm extends Component {
   state = { ...INITIAL_STATE };
 
   handleChange = (evt) => {
-    // console.log(evt.currentTarget.value);
     const { name, value } = evt.currentTarget;
     this.setState({ [name]: value });
   };
@@ -83,7 +82,7 @@ class ContactForm extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  contacts: getAllContacts(state),
+  contacts: contactsSelectors.getAllContacts(state),
 });
 
 const mapDispatchToProps = (dispatch) => ({

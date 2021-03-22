@@ -1,5 +1,4 @@
 import { combineReducers } from "redux";
-// import types from "./contacts-types";
 import { createReducer } from "@reduxjs/toolkit";
 import {
   fetchContactsRequest,
@@ -11,7 +10,6 @@ import {
   deleteFromContactsRequest,
   deleteFromContactsSuccess,
   deleteFromContactsError,
-  // deleteFromContacts,
   changeFilter,
 } from "./contacts-actions";
 
