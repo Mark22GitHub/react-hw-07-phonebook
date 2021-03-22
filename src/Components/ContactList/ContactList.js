@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import styles from "./ContactList.module.css";
 import contactsOperations from "../../redux/contacts/contacts-operations";
+import { getVisibleContacts } from "../../redux/contacts/contacts-selectors";
 
 const ContactList = ({ contacts, onDeleteFromContacts }) => {
   return (
@@ -26,22 +27,8 @@ const ContactList = ({ contacts, onDeleteFromContacts }) => {
   );
 };
 
-const getVisibleContacts = (allContacts, filter) => {
-  const normalizedFilter = filter.toLowerCase();
-
-  return allContacts.filter(({ name }) =>
-    name.toLowerCase().includes(normalizedFilter)
-  );
-};
-
-// const mapStateToProps = (state) => {
-//   const { items, filter } = state.contacts;
-//   const visibleContacts = getVisibleContacts(items, filter);
-//   return { contacts: visibleContacts };
-// };
-
-const mapStateToProps = ({ contacts: { items, filter } }) => ({
-  contacts: getVisibleContacts(items, filter),
+const mapStateToProps = (state) => ({
+  contacts: getVisibleContacts(state),
 });
 
 const mapDispatchToProps = (dispatch) => ({

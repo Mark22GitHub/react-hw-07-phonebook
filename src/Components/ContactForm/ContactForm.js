@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 import styles from "./ContactForm.module.css";
 import { connect } from "react-redux";
 import contactsOperations from "../../redux/contacts/contacts-operations";
+import { getAllContacts } from "../../redux/contacts/contacts-selectors";
 
 export const INITIAL_STATE = {
   name: "",
@@ -82,7 +83,7 @@ class ContactForm extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  contacts: state.contacts.items,
+  contacts: getAllContacts(state),
 });
 
 const mapDispatchToProps = (dispatch) => ({
